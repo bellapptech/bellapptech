@@ -1,0 +1,27 @@
+﻿# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# Rider IDE
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget
+
+# VSCode
+.vscode/
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+*.backup

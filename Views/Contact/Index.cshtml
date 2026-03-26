@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Request a Quote</h2>
+
+@if(ViewBag.Success != null)
+{
+    <div class="alert alert-success">@ViewBag.Success</div>
+}
+@if(ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form method="post" asp-action="Send" asp-controller="Contact">
+    <input class="form-control mb-2" name="name" placeholder="Your Name" required />
+    <input class="form-control mb-2" name="email" placeholder="Email" required />
+    <input class="form-control mb-2" name="phone" placeholder="Phone Number" />
+
+    <select class="form-control mb-2" name="product">
+        <option value="">Select Product</option>
+
+        @if(ViewBag.SelectedProduct == "BSPalletPro")
+        {
+            <option value="BSPalletPro" selected>BSPalletPro</option>
+        }
+        else
+        {
+            <option value="BSPalletPro">BSPalletPro</option>
+        }
+
+        @if(ViewBag.SelectedProduct == "BSWeightPro")
+        {
+            <option value="BSWeightPro" selected>BSWeightPro</option>
+        }
+        else
+        {
+            <option value="BSWeightPro">BSWeightPro</option>
+        }
+    </select>
+
+    <textarea class="form-control mb-2" name="message" placeholder="Describe your needs"></textarea>
+    <button class="btn btn-primary">Request Quote</button>
+</form>
